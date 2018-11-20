@@ -1,0 +1,42 @@
+public class Minesweeper {
+	private int a, b;
+    private Main main_M;
+    boolean finish = false;
+    int turn=0;
+
+    public Minesweeper(){
+        main_M = new Main();
+        startGame(main_M);
+    }
+
+    public static void main(String[] args) {
+      new Minesweeper();
+      
+    }
+
+    public void startGame(Main main_M){
+        do{
+        	System.out.println("난이도를 입력하세요 (1~3): ");
+        	main_M.SelectLev(main_M.sc.nextInt());
+        	
+            turn++;
+            System.out.println("Turn "+turn);
+            main_M.showMain(a, b);                //Shows the grid till the game is won or lost
+            finish = main_M.readAndsetPosition(a, b);//reads the input and checks if there is mine or not
+
+            if(!finish){
+                main_M.revealNeighbours();//opens surronding 8 neighbohors
+                finish = main_M.win(a, b);
+            }
+
+        }while(!finish);
+
+        if(main_M.win(a, b)){
+            System.out.println("Congratulations, you Won the game in  "+turn+" turns :)");
+            main_M.revealMines(a, b);
+        } else {
+            System.out.println("ooh you step over the Mine, :(");
+            main_M.revealMines(a, b);
+        }
+    }
+}
