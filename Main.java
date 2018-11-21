@@ -103,7 +103,7 @@ public class Main {
 			System.out.println();
 		}
 		System.out.print("\n  		   ");
-		for(int x = 1; x < (; x++) {
+		for(int x = 1; x < (a-1); x++) {
 		System.out.print(x + " ");
 		}
 		System.out.println();
@@ -124,8 +124,8 @@ public class Main {
 	}
 	
 	public void revealMines(int a, int b) {
-		for(int i = 1; i < a-1; i++)
-			for(int j = 1; j < b-1; j++)
+		for(int i = 1; i < (a-1); i++)
+			for(int j = 1; j < (b-1); j++)
 				if(mines[i][j] == -1)
 					Board[i][j] = '#';
 		
