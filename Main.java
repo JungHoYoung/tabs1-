@@ -102,10 +102,12 @@ public class Main {
 			
 			System.out.println();
 		}
-		System.out.print("\n			");
-		for(int x = 1; x < b; x++) {
-		System.out.println(x + "   ");
-		System.out.println("					Columns");
+		System.out.print("\n  		   ");
+		for(int x = 1; x < (; x++) {
+		System.out.print(x + " ");
+		}
+		System.out.println();
+		System.out.println("			Columns");
 		}
 	}
 	
